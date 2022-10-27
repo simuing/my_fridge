@@ -1,7 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:my_fridge/fridge_item.dart';
+import 'package:my_fridge/fridge/fridge_item.dart';
 
 class FridgeSpace extends StatelessWidget {
   String name = 'First';
@@ -16,7 +16,10 @@ class FridgeSpace extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.all(10),
+      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+      decoration:
+          BoxDecoration(border: Border.all(color: Colors.black, width: 2)),
+      padding: EdgeInsets.all(10),
       child: Column(
         children: [
           Text(
@@ -26,7 +29,9 @@ class FridgeSpace extends StatelessWidget {
           ),
           ...(items as List).map((item) {
             return FridgeItem(
-                item['name'], item['quantity'], item['quantities']);
+                name: item['name'],
+                quantity: item['quantity'],
+                quantities: item['quantities']);
           }),
           ElevatedButton(
             child: Text('음식 추가'),

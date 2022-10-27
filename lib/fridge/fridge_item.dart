@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 
-String getItemName(FridgeItem item) {
-  return item.name + ' ' + item.quantity.toString() + item.quantities;
-}
-
 class FridgeItem extends StatelessWidget {
   final Function selectHandler = () => null;
-  int id = 0;
-  String name = 'name';
-  int quantity = 1;
+  final int id = 0;
+  final String name;
   String quantities = '개';
+  int quantity = 1;
 
-  FridgeItem(String name, int quantity, String quantities) {
-    this.name = name;
-    this.quantity = quantity;
-    this.quantities = quantities;
-  }
+  FridgeItem({
+    super.key,
+    required this.name,
+    required this.quantity,
+    required this.quantities,
+  });
   // _FridgeItem(this.selectHandler);
 
   @override
@@ -28,7 +25,7 @@ class FridgeItem extends StatelessWidget {
         style: ButtonStyle(
           backgroundColor: MaterialStatePropertyAll<Color>(Colors.amber),
         ),
-        child: Text(getItemName(this)),
+        child: Text('${this.name} ${this.quantity}${this.quantities}'),
         onPressed: () => print(this.name),
       ),
     );

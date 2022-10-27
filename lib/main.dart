@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_fridge/fridge_space.dart';
+import 'package:my_fridge/fridge/fridge_space.dart';
 
 void main() => runApp(MyApp());
 
@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> {
           children: <Widget>[
             ...(data as List).map((fridge) {
               return FridgeSpace(fridge['name'], fridge['items']);
-            }),
+            }).toList(),
             FloatingActionButton(
               child: Text('칸추가'),
               onPressed: () => print('click pp'),
