@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_file.dart';
 import 'package:my_fridge/fridge/fridge_space.dart';
+import 'package:intl/intl.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,6 +17,9 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    final df = new DateFormat('yyyy-MM-dd hh:mm a');
+    var today = df.format(DateTime.now());
+
     var data = [
       {
         'name': '냉장고 A',
@@ -46,6 +51,7 @@ class _MyAppState extends State<MyApp> {
               child: Text('칸추가'),
               onPressed: () => print('click pp'),
             ),
+            Text('현재시각: ${today}')
           ],
         ),
       ),
