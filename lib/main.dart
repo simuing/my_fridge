@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
 
     var data = [
       {
-        'name': '냉장고 A',
+        'name': '냉장고 A-1',
         'items': [
           {'name': 'Apple', 'quantity': 3, 'quantities': '개'},
           {'name': 'Water', 'quantity': 10, 'quantities': '병'},
@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
         ]
       },
       {
-        'name': '냉장고 B',
+        'name': '냉장고 A-2',
         'items': [
           {'name': 'Orange', 'quantity': 13, 'quantities': '개'},
         ]
