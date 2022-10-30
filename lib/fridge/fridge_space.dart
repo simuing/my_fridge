@@ -32,7 +32,10 @@ class FridgeSpace extends StatelessWidget {
                 quantities: item['quantities']);
           }),
           ElevatedButton(
-            child: Text('음식 추가'),
+            child: Text(
+              '음식 추가', 
+              style: TextStyle(fontSize: 22)
+            ),
             onPressed: () => print('click +'),
             style: ButtonStyle(
               backgroundColor: MaterialStatePropertyAll<Color>(
