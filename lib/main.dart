@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/date_symbol_data_file.dart';
 import 'package:my_fridge/fridge/fridge_space.dart';
 import 'package:intl/intl.dart';
 
@@ -47,6 +46,9 @@ class _MyAppState extends State<MyApp> {
             ...(data as List).map((fridge) {
               return FridgeSpace(fridge['name'], fridge['items']);
             }).toList(),
+            TextField(
+              decoration: InputDecoration(labelText: '칸 이름'),
+            ),
             FloatingActionButton(
               child: Text('칸추가'),
               onPressed: () => print('click pp'),
